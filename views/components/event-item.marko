@@ -1,0 +1,28 @@
+import { format, literalDateRange } from "../../lib/viewHelpers/date"
+
+$ const { eventItem } = input;
+$ const { startDate, endDate, image, headline, note, eventType, format: eventFormat, status } = eventItem
+
+<a class="event-wrapper" href=eventItem.url>
+  <div class="event-card">
+    <p class="event-card__meta global-s-bold">
+      <if(status !== "Active")>Genomfört</if>
+      <time datetime=startDate>${" " + literalDateRange(startDate, endDate)}</time>
+    </p>
+    <h2 class="event-card__header global-l">${headline}</h2>
+    <div class="event-card__body">${note}</div>
+    <p class="event-card__footer">
+      ${eventType}<if(eventType && eventFormat)>•</if> 
+      ${eventFormat}
+    </p>
+  </div>
+  <image
+    class="event-card__image hidden-mobile"
+    image={
+      ...image,
+      alt: headline
+    }
+    ratios=[16/9]
+    widths=[[235]]
+  />
+</a>
