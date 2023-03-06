@@ -8,7 +8,7 @@ We are running a Marko / Express.js setup today. We want to convert from cjs to 
 
 The Marko server side rendering is done like this `template.renderToString(viewModel, errHtmlCallbackFunction);`
 
-Vite seems to add a <script> before and after our template html. Any idea how we can get rid of the unwanted script tags?
+Vite seems to add a <script></script> before and after our template html. Any idea how we can get rid of the unwanted script tags?
 
 ## To run the test
 
