@@ -15,7 +15,7 @@ function cleanupHtml(html) {
 
 async function renderToString(template, viewModel) {
   const html = await new Promise((resolve, reject) => {
-    eventItemTemplate.renderToString({ eventItem }, (err, html) => {
+    template.renderToString(viewModel, (err, html) => {
       if (err) reject(err);
       else resolve(html);
     });
