@@ -29,7 +29,7 @@ describe('renderToString', () => {
     };
     const html = eventItemTemplate.renderToString({ eventItem });
     console.log('empty html', html);
-    // expect(html).to.not.equal(''); // Fails!
+    expect(html).to.not.equal(''); // Fails!
   });
 
   it('workaround', () => {
